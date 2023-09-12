@@ -1,19 +1,5 @@
 {
-  "name": "front-back-server",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "clean-install": "rm -rf node_modules && npm install",
-    "build": "babel src/ --out-dir build",
-    "babel-node": "babel-node --presets=@babel/preset-env",
-    "start": "node build/app.js",
-    "dev": "nodemon --exec npm run babel-node  src/app.js",
-    "preinstall": "npx npm-force-resolutions"
-  },
   "author": "",
-  "license": "ISC",
   "dependencies": {
     "@graphql-tools/load-files": "^6.5.3",
     "@graphql-tools/merge": "^8.2.2",
@@ -39,6 +25,7 @@
     "sequelize": "^6.16.2",
     "subscriptions-transport-ws": "0.11.0"
   },
+  "description": "",
   "devDependencies": {
     "@babel/cli": "^7.17.6",
     "@babel/core": "^7.17.5",
@@ -47,5 +34,17 @@
     "@babel/preset-env": "^7.16.11",
     "babel-node": "^0.0.1-security",
     "nodemon": "^2.0.15"
-  }
+  },
+  "license": "ISC",
+  "main": "index.js",
+  "name": "web-server-socket",
+  "scripts": {
+    "babel-node": "babel-node --presets=@babel/preset-env",
+    "build": "babel src/ --out-dir build",
+    "clean-install": "rm -rf node_modules && npm install",
+    "dev": "nodemon --exec npm run babel-node  src/app.js",
+    "start": "node build/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
 }
