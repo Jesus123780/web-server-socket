@@ -23,6 +23,23 @@ import indexRoutes from './api/lib/router'
     // Initialization apps
     const app = express();
     // Middleware
+    app.use(
+      cors({
+        methods: ['GET', 'POST'],
+        origin: [
+          process.env.WEB_CLIENT,
+          process.env.WEB_ADMIN_STORE,
+          'http://localhost:3000',
+          'http://localhost:3001',
+          'http://localhost:3002',
+          'http://localhost:3003',
+          'http://localhost:3004',
+          'https://eatsy-client.vercel.app',
+          'https://front-back-server.onrender.com' // Add your domain here
+        ],
+        credentials: true
+      })
+    )
     app.use(morgan('dev'))
     app.use(express.json({ limit: '50mb' }))
     app.use(graphqlUploadExpress({ maxFileSize: 1000000000, maxFiles: 10 }))
